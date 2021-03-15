@@ -1,0 +1,6 @@
+{
+  "compilerOptions": { "strict": true },
+  "rootDir": "./src",
+  "include": ["**/*.ts"],
+  "exclude": ["dist", "node_modules"]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "cda-addon-library",
+  "version": "0.0.0",
+  "description": "Web Component Starter Kit for Clarity Design UI",
+  "keywords": [
+    "web component",
+    "design system",
+    "clarity",
+    "ui"
+  ],
+  "files": [
+    "*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coryrylan/clarity-addon-kit"
+  },
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "@cds/core": "^5.0.2"
+  },
+  "dependencies": {
+    "lit-element": "^2.2.1",
+    "lit-html": "^1.1.2"
+  },
+  "optionalDependencies": {
+    "@cds/city": "^1.1.0",
+    "normalize.css": "^8.0.1"
+  },
+  "main": "./index.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": "./"
+  },
+  "sideEffects": [
+    "./counter/register.js"
+  ]
+}
