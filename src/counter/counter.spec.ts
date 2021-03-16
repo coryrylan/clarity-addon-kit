@@ -1,5 +1,11 @@
 import { expect } from '@esm-bundle/chai';
 import { html } from 'lit-element';
+
+/**
+ * @internal
+ * While stable, @cds/core/test is an internal API not subject to semver updates.
+ * We may open this API up as a fully supported public API in the future.
+ */
 import {
   componentIsStable,
   createTestElement,
