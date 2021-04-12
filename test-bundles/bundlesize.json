@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "path": "./dist/test-bundles/webpack.bundle.js",
+      "maxSize": "20 kB",
+      "compression": "brotli"
+    }
+  ]
+}

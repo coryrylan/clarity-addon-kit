@@ -1,74 +1,59 @@
 {
-  "name": "cdp-addon-build",
+  "name": "clarity-addons",
   "version": "0.0.0",
+  "description": "Webcomponent clarity-addons following open-wc recommendations",
+  "author": "clarity-addons",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "scripts": {
     "start": "npm-run-all clean -p build:watch dev",
-    "ci": "npm-run-all clean lint build test package",
+    "ci": "npm-run-all clean lint build package test",
     "clean": "del ./dist",
     "dev": "web-dev-server --node-resolve",
     "lint": "eslint -c .eslintrc.js \"**/*.ts\" --ignore-pattern \"dist\" && prettier --check .",
     "format": "eslint -c .eslintrc.js \"**/*.ts\" --ignore-pattern \"dist\" --fix && prettier --write .",
     "build": "tsc",
-    "build:watch": "tsc --watch --preserveWatchOutput",
-    "test": "web-test-runner --coverage; del ./dist/lib/**/*.spec.*",
+    "test": "npm-run-all test:performance test:package",
     "test:watch": "web-test-runner --watch",
-    "package": "npm-run-all package:*",
-    "package:files": "cpy src/package.json ./dist/lib/; cpy README.md ./dist/lib/;",
-    "package:api": "wca analyze './dist/lib' --silent --format=json --outFile ./dist/lib/custom-elements.json",
-    "package:check": "package-check --cwd ./dist/lib"
+    "test:unit": "web-test-runner --coverage; del ./dist/src/**/*.spec.*",
+    "test:performance": "webpack --config ./test-bundles/webpack.config.js && bundlesize --config ./test-bundles/bundlesize.json",
+    "test:package": "package-check --cwd ./dist/src",
+    "package": "npm-run-all package:files package:api",
+    "package:files": "cpy src/package.json ./dist/src/; cpy README.md ./dist/src/;",
+    "package:api": "wca analyze './dist/src' --silent --format=json --outFile ./dist/src/custom-elements.json",
+    "storybook": "wds -c .storybook/server.mjs",
+    "storybook:build": "build-storybook -o ./dist/storybook"
   },
   "dependencies": {
     "@cds/city": "^1.1.0",
-    "@cds/core": "^5.0.2",
+    "@cds/core": "^5.1.1",
     "lit-element": "^2.4.0",
     "lit-html": "^1.3.0",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "@esm-bundle/chai": "^4.3.0",
+    "@esm-bundle/chai": "^4.3.4",
     "@open-wc/eslint-config": "^4.2.0",
     "@open-wc/testing": "^2.5.32",
     "@skypack/package-check": "^0.2.2",
-    "@typescript-eslint/eslint-plugin": "^4.15.2",
-    "@typescript-eslint/parser": "^4.15.2",
-    "@web/dev-server": "^0.1.8",
-    "@web/test-runner": "^0.12.15",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "@web/dev-server": "^0.1.11",
+    "@web/dev-server-storybook": "^0.1.3",
+    "@web/test-runner": "^0.12.19",
+    "bundlesize": "^0.18.1",
     "cpy-cli": "^3.1.1",
     "del-cli": "^3.0.1",
-    "eslint": "^7.2.0",
-    "eslint-config-prettier": "^8.0.0",
-    "eslint-plugin-jasmine": "^4.1.2",
-    "eslint-plugin-lit-a11y": "^1.0.1",
-    "fs-extra": "^9.1.0",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^7.2.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
-    "tslib": "^2.1.0",
-    "typescript": "^4.2.2",
-    "web-component-analyzer": "^1.1.6"
-  },
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "extends": [
-      "@open-wc/eslint-config",
-      "eslint-config-prettier"
-    ],
-    "plugins": [
-      "@typescript-eslint"
-    ],
-    "rules": {
-      "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": [
-        "error"
-      ],
-      "import/no-unresolved": "off",
-      "import/extensions": [
-        "error",
-        "always",
-        {
-          "ignorePackages": true
-        }
-      ]
-    }
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4",
+    "web-component-analyzer": "^1.1.6",
+    "webpack": "^4.0.0",
+    "webpack-cli": "3.3.11"
   },
   "prettier": {
     "singleQuote": true,

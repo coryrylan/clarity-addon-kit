@@ -1,4 +1,4 @@
-import '../dist/lib/counter/register.js';
+import '../dist/src/counter/register.js';
 
 const counter = document.querySelector('cda-counter');
 const currentCount = document.querySelector('#current-count');

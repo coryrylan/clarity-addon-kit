@@ -14,8 +14,6 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    node: true,
-    jasmine: true,
   },
   extends: [
     'eslint:recommended',
@@ -27,12 +25,12 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: 'tsconfig.eslint.json',
+    project: 'tsconfig.json',
     sourceType: 'module',
     extraFileExtensions: ['.html'],
   },
-  ignorePatterns: ['**/*.css.ts', './dist'],
-  plugins: ['@typescript-eslint', 'lit-a11y', 'jasmine'],
+  ignorePatterns: ['./dist'],
+  plugins: ['@typescript-eslint', 'lit-a11y'],
   rules: {
     'accessor-pairs': 'error',
     curly: 'error',

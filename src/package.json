@@ -18,7 +18,7 @@
   "author": "",
   "license": "MIT",
   "peerDependencies": {
-    "@cds/core": "^5.0.2"
+    "@cds/core": "^5.1.1"
   },
   "dependencies": {
     "lit-element": "^2.2.1",

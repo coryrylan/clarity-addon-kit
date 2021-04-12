@@ -1,5 +1,5 @@
 import { html, LitElement, property } from 'lit-element';
-import { styles } from './counter.element.styles';
+import { styles } from './counter.element.styles.js';
 
 /**
  * @internal
@@ -28,7 +28,10 @@ export class CdaCounter extends LitElement {
           <cds-icon shape="minus"></cds-icon>
         </cds-icon-button>
         <div class="value">
-          <p cds-text="subsection center">${this.value}</p>
+          <p cds-text="subsection center">
+            ${this.value}
+            <slot></slot>
+          </p>
         </div>
         <cds-icon-button
           aria-label="increment"
