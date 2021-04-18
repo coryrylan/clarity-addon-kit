@@ -1,3 +1,4 @@
+import { importMapsPlugin } from '@web/dev-server-import-maps';
 // import { hmrPlugin, presets } from '@open-wc/dev-server-hmr';
 
 /** Use Hot Module replacement by adding --hmr to the start command */
@@ -22,6 +23,17 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   plugins: [
     /** Use Hot Module Replacement by uncommenting. Requires @open-wc/dev-server-hmr plugin */
     // hmr && hmrPlugin({ exclude: ['**/*/node_modules/**/*'], presets: [presets.litElement] }),
+    importMapsPlugin({
+      inject: {
+        importMap: {
+          imports: {
+            'cda-addon-library': '/dist/src/index.js',
+            'cda-addon-library/counter/register.js':
+              '/dist/src/counter/register.js',
+          },
+        },
+      },
+    }),
   ],
 
   // See documentation for all available options

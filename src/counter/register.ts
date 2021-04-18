@@ -7,7 +7,7 @@ import '@cds/core/icon/register.js';
 
 ClarityIcons.addIcons(plusIcon, minusIcon);
 
-!customElements.get('cda-counter') 
+!customElements.get('cda-counter')
   ? window.customElements.define('cda-counter', CdaCounter)
   : console.warn('cda-counter registered already');
 
