@@ -1,0 +1,10 @@
+
+@import 'normalize.css';
+@import '@cds/core/global.min.css';
+@import '@cds/core/styles/theme.dark.min.css';
+@import '@cds/city/css/bundles/default.min.css';
+@import '../dist/lib/global.min.css';
+
+body {
+  padding: 24px;
+}

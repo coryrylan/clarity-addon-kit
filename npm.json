@@ -1,0 +1,23 @@
+{
+  "name": "clarity-addon-kit",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coryrylan/clarity-addon-kit"
+  },
+  "keywords": [
+    "web component"
+  ],
+  "main": "./index.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "type": "module",
+  "files": ["*"],
+  "dependencies": {
+    "@cds/city": "^1.1.0",
+    "@cds/core": "^5.4.1",
+    "lit": "^2.0.0-rc.2",
+    "normalize.css": "^8.0.1"
+  }
+}

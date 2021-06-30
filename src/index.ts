@@ -1,1 +1,1 @@
-// export utilities at top level entrypoint
+export { test } from 'lib/internal';

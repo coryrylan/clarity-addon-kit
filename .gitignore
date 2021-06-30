@@ -4,6 +4,9 @@
 
 ## system files
 .DS_Store
+coverage
+.rollup.cache
+node_modules
 
 ## npm
 /node_modules/
@@ -19,5 +22,3 @@
 /_site/
 /dist/
 /out-tsc/
-
-storybook-static

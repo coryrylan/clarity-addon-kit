@@ -1,1 +1,1 @@
-export { CdaCounter } from './counter.element.js';
+export * from './counter.element.js';

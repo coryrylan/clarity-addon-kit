@@ -1,16 +1,13 @@
-import { html, LitElement, property } from 'lit-element';
-import { styles } from './counter.element.styles.js';
+import { html, LitElement } from 'lit';
+import { property } from 'lit/decorators/property.js';
+import styles from './counter.element.scss';
+import { baseStyles } from '../internal';
 
 /**
- * @internal
- * Base styles are currently an internal API not subject to semver updates.
- *
- * The base styles provide styles for core components that use shadow DOM.
- * Components using the base styles are required to have the global clarity
- * core styles loaded in the window.
+ * @element cda-counter
+ * @event decrement
+ * @event increment
  */
-import { baseStyles } from '@cds/core/internal';
-
 export class CdaCounter extends LitElement {
   static get styles() {
     return [baseStyles, styles];

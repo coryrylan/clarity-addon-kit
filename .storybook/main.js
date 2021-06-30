@@ -1,3 +1,8 @@
+const rollupStorybook = require('../rollup.storybook');
+
 module.exports = {
-  stories: ['../dist/stories/**/*.stories.{js,md,mdx}'],
+  stories: ['../src/**/*.stories.{ts,mdx}'],
+  rollupConfig(config) {
+    return rollupStorybook.getConfig(config);
+  }
 };
