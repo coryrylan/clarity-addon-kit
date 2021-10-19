@@ -14,8 +14,9 @@ provides an isolated basic web server to develop with.
 
 - `start`: runs local dev build and storybook in watch mode.
 - `sandbox`: runs a simple isolated dev env
+- `ci`: builds and runs all tests
 - `build`: builds library into dist directory for publication.
-- `test`: runs unit tests and performance bundle test
+- `test`: runs unit tests and performance tests
 - `test:watch`: runs unit tests in a watch mode
 - `lint`: runs code linting
 - `format`: runs code formatting (prettier)
@@ -23,9 +24,9 @@ provides an isolated basic web server to develop with.
 
 ## Configuration
 
-- `rollup.config.js` defines all components and modules to be compiled as part of the library.
-- `web-dev-server.config.mjs` defines the import map for Storybook and Sandbox to load your library and dependencies.
-- `bundlesize.config.json` defines the maximum size for library output when bundled in an application.
+- `rollup.config.js` defines all components and modules to be compiled as part of the library
+- `web-dev-server.config.mjs` defines the import map for Storybook and Sandbox to load your library and dependencies
+- `web-dev-server.performance.mjs` defines config for running performance tests
 
 ## Publishing
 

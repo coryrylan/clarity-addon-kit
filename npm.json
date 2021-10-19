@@ -16,8 +16,8 @@
   "files": ["*"],
   "dependencies": {
     "@cds/city": "^1.1.0",
-    "@cds/core": "^5.4.1",
-    "lit": "^2.0.0-rc.2",
-    "normalize.css": "^8.0.1"
+    "@cds/core": "^5.0.0",
+    "lit": "^2.0.0",
+    "modern-normalize": "^1.1.0"
   }
 }

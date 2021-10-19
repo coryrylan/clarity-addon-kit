@@ -1,7 +1,7 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import './register.js';
-import { CdaCounter } from './counter.element.js';
+import { CdaCounter } from 'lib/counter';
+import 'lib/counter/register.js';
 
 describe('cda-counter', () => {
   let component: CdaCounter;
